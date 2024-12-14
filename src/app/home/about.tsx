@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div>
+    <div id="about">
       <h2>About Me</h2>
       <p>
         Skills: Front End: React, Redux, Angular, HTML5, CSS, and jQuery Back
