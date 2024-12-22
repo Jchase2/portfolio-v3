@@ -8,9 +8,9 @@ const About = () => {
         REST APIs, .NET Core, MS SQL Server, Entity Framework Others:
         JavaScript(ES6+), TypeScript, TDD/BDD, Jest, Cypress, JSON, Git, npm,
         and JWT&apos;s I&apos;m a CS grad who&apos;s constantly improving my
-        skills. Recently, I’ve been working with React and its associated stack
-        on front end, as well as node with related tech on the back end. I have
-        experience building full stack apps and I&apos;m very interested in
+        skills. Recently, I&apos;ve been working with React and its associated
+        stack on front end, as well as node with related tech on the back end. I
+        have experience building full stack apps and I&apos;m very interested in
         growing my skills and taking on a new challenge. I have developed a wide
         range of skills working on various projects and constantly expanding my
         skills over the last few years. Feel free to check out some of my
