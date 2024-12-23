@@ -10,19 +10,18 @@ export default function Home() {
 
   const [mounted, setMounted] = useState(false);
 
-  // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) {
-    return null;
+    return null; // or a skeleton/placeholder
   }
 
   return (
     <div>
       <section className="h-[calc(100vh-74px)] flex items-center justify-center">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0" suppressHydrationWarning>
           {theme === "dark" ? (
             <Image
               src="/background.jpg"
@@ -44,9 +43,9 @@ export default function Home() {
           <p className="text-sm">Developer Portfolio / Personal Site</p>
         </div>
       </section>
-      <section>
+      <div className="flex justify-center">
         <About />
-      </section>
+      </div>
     </div>
   );
 }

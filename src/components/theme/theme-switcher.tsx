@@ -4,9 +4,23 @@ import { LucideMoon, LucideSun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "../ui/button";
+import { useEffect, useState } from "react";
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Button variant="outline" size="icon">
+        <span className="h-4 w-4" />
+      </Button>
+    );
+  }
 
   return (
     <Button
