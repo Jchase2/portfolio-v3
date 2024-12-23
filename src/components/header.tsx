@@ -15,8 +15,11 @@ const Header = () => {
         <ThemeSwitcher />
       </div>
       <div className="flex align-items gap-x-2">
-        <Link href="#about" className={buttonVariants({ variant: "default" })}>
+        <Link href="#about" className={buttonVariants({ variant: "ghost" })}>
           About
+        </Link>
+        <Link href="#projects" className={buttonVariants({ variant: "ghost" })}>
+          Projects
         </Link>
       </div>
     </nav>

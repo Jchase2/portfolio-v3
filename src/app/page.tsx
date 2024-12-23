@@ -4,6 +4,7 @@ import { About } from "@/app/home/about";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { Projects } from "./home/projects";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -45,6 +46,9 @@ export default function Home() {
       </section>
       <div className="flex justify-center">
         <About />
+      </div>
+      <div className="flex justify-center mt-20">
+        <Projects />
       </div>
     </div>
   );
