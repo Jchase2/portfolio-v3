@@ -17,6 +17,7 @@ const Projects = () => {
               github={elem.github}
               live={elem.live}
               otherImage={elem.otherImage}
+              otherImageText={elem.otherImageText}
             />
           );
         })}

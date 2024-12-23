@@ -7,6 +7,7 @@ import {
 } from "../../components/ui/card";
 import { LucideGithub, LucideLink } from "lucide-react";
 import { StaticImageData } from "next/image";
+import { ImagePopover } from "@/components/imagePopover";
 
 type ProjectCardProps = {
   title: string;
@@ -14,6 +15,7 @@ type ProjectCardProps = {
   github?: string;
   live?: string;
   otherImage?: StaticImageData;
+  otherImageText?: string;
 };
 
 const ProjectCard = ({
@@ -22,6 +24,7 @@ const ProjectCard = ({
   github,
   live,
   otherImage,
+  otherImageText,
 }: ProjectCardProps) => {
   return (
     <Card className="flex-grow basis-60 min-w-60 max-w-96 m-1">
@@ -38,11 +41,16 @@ const ProjectCard = ({
               <LucideLink size="16" />
             </a>
           )}
-          {/* replace with image popout when that gets written */}
-          {otherImage && null}
         </div>
       </CardHeader>
-      <CardContent>{data}</CardContent>
+      <CardContent>
+        {data}
+        <div className="flex justify-center mt-4">
+          {otherImage && otherImageText ? (
+            <ImagePopover image={otherImage} buttonText={otherImageText} />
+          ) : null}
+        </div>
+      </CardContent>
     </Card>
   );
 };

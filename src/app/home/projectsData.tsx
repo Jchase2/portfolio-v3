@@ -8,6 +8,7 @@ interface IProjectCard {
   github?: string;
   live?: string;
   otherImage?: StaticImageData;
+  otherImageText?: string;
 }
 
 const ProjectData: IProjectCard[] = [
@@ -20,9 +21,9 @@ const ProjectData: IProjectCard[] = [
     title: "HN Clone",
     data: (
       <React.Fragment>
-        A ycombinator hacker news clone using react,{" "}
-        {<a href="https://reactrouter.com">react-router</a>},{" "}
-        {<a href="https://react.semantic-ui.com/">react semantic-ui</a>} and{" "}
+        A ycombinator hacker news clone using react,
+        {<a href="https://reactrouter.com">react-router</a>},
+        {<a href="https://react.semantic-ui.com/">react semantic-ui</a>} and
         {<a href="https://github.com/HackerNews/API">the HN firebase API.</a>}
       </React.Fragment>
     ),
@@ -49,6 +50,7 @@ const ProjectData: IProjectCard[] = [
     title: "Server",
     data: "About my personal server / the stack this site (and my projects) are running on.",
     otherImage: Server,
+    otherImageText: "Home Server Diagram",
   },
   {
     title: "punbbDiscordBot",
