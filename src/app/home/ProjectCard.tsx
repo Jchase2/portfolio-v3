@@ -7,7 +7,7 @@ import {
 } from "../../components/ui/card";
 import { LucideGithub, LucideLink } from "lucide-react";
 import { StaticImageData } from "next/image";
-import { ImagePopover } from "@/components/imagePopover";
+import { ImageModal } from "@/components/imageModal";
 
 type ProjectCardProps = {
   title: string;
@@ -47,7 +47,11 @@ const ProjectCard = ({
         {data}
         <div className="flex justify-center mt-4">
           {otherImage && otherImageText ? (
-            <ImagePopover image={otherImage} buttonText={otherImageText} />
+            <ImageModal
+              image={otherImage}
+              buttonText={otherImageText}
+              dialogTitle="Image of home server layout."
+            />
           ) : null}
         </div>
       </CardContent>
