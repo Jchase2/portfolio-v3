@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div id="about" className="max-w-4xl min-w-60">
       <h2 className="text-lg">About Me</h2>
-      <Separator />
+      <Separator className="bg-gray-500" />
       <p className="mt-2">
         I am a Full Stack Developer located in Philadelphia, Pennsylvania.
       </p>
