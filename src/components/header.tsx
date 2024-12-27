@@ -4,13 +4,7 @@ import { buttonVariants } from "./ui/button";
 
 const Header = () => {
   return (
-    <nav
-      className="
-          fixed left-0 right-0 top-0 z-20
-          opacity-100
-          w-full flex py-2.5 px-5 justify-between
-          "
-    >
+    <nav className="absolute left-0 right-0 z-20 opacity-100 w-full flex py-2.5 px-5 justify-between">
       <div className="flex align-items gap-x-2">
         <ThemeSwitcher />
       </div>

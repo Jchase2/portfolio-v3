@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 
 const About = () => {
   return (
-    <div id="about" className="max-w-4xl min-w-80">
+    <div id="about" className="max-w-4xl min-w-60">
       <h2 className="text-lg">About Me</h2>
       <Separator />
       <p className="mt-2">

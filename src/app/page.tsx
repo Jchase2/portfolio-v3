@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Projects } from "./home/projects";
+import { Education } from "./home/education";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -49,6 +50,9 @@ export default function Home() {
       </div>
       <div className="flex justify-center mt-20">
         <Projects />
+      </div>
+      <div className="flex justify-center mt-20">
+        <Education />
       </div>
     </div>
   );

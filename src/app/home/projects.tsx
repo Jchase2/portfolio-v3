@@ -4,7 +4,7 @@ import ProjectData from "./projectsData";
 
 const Projects = () => {
   return (
-    <div id="projects" className="w-full max-w-4xl">
+    <div id="projects" className="w-full md:max-w-4xl sm:max-w-[100vw]">
       <h2 className="text-lg">Projects</h2>
       <Separator />
       <div className="flex flex-row flex-wrap my-2">

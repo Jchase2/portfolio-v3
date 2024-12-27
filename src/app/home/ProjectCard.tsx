@@ -7,6 +7,7 @@ import {
 } from "../../components/ui/card";
 import { LucideGithub, LucideLink } from "lucide-react";
 import { StaticImageData } from "next/image";
+
 import { ImageModal } from "@/components/imageModal";
 
 type ProjectCardProps = {
@@ -50,7 +51,8 @@ const ProjectCard = ({
             <ImageModal
               image={otherImage}
               buttonText={otherImageText}
-              dialogTitle="Image of home server layout."
+              imageDesc={otherImageText}
+              triggerType={"button"}
             />
           ) : null}
         </div>
