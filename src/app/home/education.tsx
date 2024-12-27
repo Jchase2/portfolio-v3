@@ -3,6 +3,15 @@ import { Separator } from "@/components/ui/separator";
 import ISC from "../../../public/isc.jpg";
 import degree from "../../../public/degree.jpg";
 import codeworks from "../../../public/codeworks.jpg";
+import HKUST_1 from "../../../public/HKUST_1.png";
+import HKUST_2 from "../../../public/HKUST_2.png";
+import HKUST_3 from "../../../public/HKUST_3.png";
+import HKUST_4 from "../../../public/HKUST_4.png";
+import HKUST_5 from "../../../public/HKUST_5.png";
+import HKUST_GO from "../../../public/go.png";
+import UIDEV from "../../../public/uidev.png";
+import fcc1 from "../../../public/fcc1.jpg";
+import fcc2 from "../../../public/fcc2.png";
 
 import { EducationCard } from "./educationCard";
 
@@ -12,7 +21,7 @@ const Education = () => {
       <h1>Education</h1>
       <Separator className="bg-gray-500" />
       <Tabs defaultValue="University" className="flex mt-4">
-        <TabsList className="flex-col h-fit bg-transparent space-y-10 p-2 mr-4 w-28 md:w-32 lg:w-40 border-l-2 border-gray-500 rounded-none">
+        <TabsList className="flex-col h-fit bg-transparent space-y-10 p-2 mr-4 w-28 md:w-32 lg:w-40 lg:min-w-40 border-l-2 border-gray-500 rounded-none">
           <TabsTrigger
             value="University"
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
@@ -69,7 +78,10 @@ const Education = () => {
             }
           />
         </TabsContent>
-        <TabsContent value="CodeWorks">
+        <TabsContent
+          value="CodeWorks"
+          className="flex flex-wrap gap-4 mt-0 max-w-full"
+        >
           <EducationCard
             image={codeworks}
             imageDesc={
@@ -83,6 +95,188 @@ const Education = () => {
                   className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
                 >
                   Software Engineering Immersive Course
+                </a>{" "}
+              </span>
+            }
+          />
+        </TabsContent>
+        <TabsContent
+          value="Coursera"
+          className="flex flex-wrap gap-4 mt-0 max-w-full"
+        >
+          <EducationCard
+            image={HKUST_1}
+            imageDesc={
+              "Hong Kong University of Science and Technology, Coursera Full Stack Web Development with React, 4 Course Specialization."
+            }
+            cardDesc={
+              <span>
+                Hong Kong University of Science and Technology, Coursera Full
+                Stack Web Development with React, 4 Course Specialization.
+                <a
+                  href="https://coursera.org/share/003db97a634a8112eb680ecef7d579cc"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+          <EducationCard
+            image={HKUST_2}
+            imageDesc={
+              "Hong Kong University of Science and Technology, Coursera Front-End Web UI Frameworks and Tools: Bootstrap 4 certificate."
+            }
+            cardDesc={
+              <span>
+                Hong Kong University of Science and Technology, Coursera
+                Front-End Web UI Frameworks and Tools: Bootstrap 4 certificate.
+                <a
+                  href="https://www.coursera.org/account/accomplishments/certificate/27A294PQ27E3"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+          <EducationCard
+            image={HKUST_3}
+            imageDesc={
+              "Hong Kong University of Science and Technology, Coursera Front-End Web UI Frameworks and Tools: Front End Web Development with React."
+            }
+            cardDesc={
+              <span>
+                Hong Kong University of Science and Technology, Coursera
+                Front-End Web UI Frameworks and Tools: Front End Web Development
+                with React.
+                <a
+                  href="https://www.coursera.org/account/accomplishments/certificate/6GKSXGEGFZXH"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+          <EducationCard
+            image={HKUST_4}
+            imageDesc={
+              "Hong Kong University of Science and Technology, Coursera Multiplatform Mobile App Development with React Native"
+            }
+            cardDesc={
+              <span>
+                Hong Kong University of Science and Technology, Coursera
+                Multiplatform Mobile App Development with React Native
+                <a
+                  href="https://www.coursera.org/account/accomplishments/certificate/3ET7VXX64JH9"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+          <EducationCard
+            image={HKUST_5}
+            imageDesc={
+              "Hong Kong University of Science and Technology, Coursera Server Side Development with NodeJS, Express, and MongoDB"
+            }
+            cardDesc={
+              <span>
+                Hong Kong University of Science and Technology, Coursera Server
+                Side Development with NodeJS, Express, and MongoDB
+                <a
+                  href="https://coursera.org/share/64a12105fdc569687e8196720e30b6bb"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+          <EducationCard
+            image={HKUST_GO}
+            imageDesc={
+              "Cert for completeing Getting started with Go, from UC Urvine on Coursera"
+            }
+            cardDesc={
+              <span>
+                Cert for completeing &quot;Getting started with Go&quot;, from
+                UC Urvine on Coursera
+                <a
+                  href="https://www.coursera.org/account/accomplishments/certificate/P43KP2AT7DX9"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+        </TabsContent>
+        <TabsContent
+          value="uidev"
+          className="flex flex-wrap gap-4 mt-0 max-w-full"
+        >
+          <EducationCard
+            image={UIDEV}
+            imageDesc={
+              "Cert for completeing Getting started with Go, from UC Urvine on Coursera"
+            }
+            cardDesc={
+              <span>
+                Certificate for completing the React course at
+                <a
+                  href="https://ui.dev/classic-react"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  UI.DEV
+                </a>{" "}
+              </span>
+            }
+          />
+        </TabsContent>
+        <TabsContent
+          value="fcc"
+          className="flex flex-wrap gap-4 mt-0 max-w-full"
+        >
+          <EducationCard
+            image={fcc1}
+            imageDesc={
+              "Cert for completeing Getting started with Go, from UC Urvine on Coursera"
+            }
+            cardDesc={
+              <span>
+                Free Code Camp Data Structures and Algorithms certification.
+                <a
+                  href="https://www.freecodecamp.org/certification/fcc2c5f7d4d-6435-4973-a266-804a044e6aaf/javascript-algorithms-and-data-structures"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+          <EducationCard
+            image={fcc2}
+            imageDesc={"Responsive Web Design Certification."}
+            cardDesc={
+              <span>
+                Responsive Web Design Certification.
+                <a
+                  href="https://www.freecodecamp.org/certification/fcc2c5f7d4d-6435-4973-a266-804a044e6aaf/responsive-web-design"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
                 </a>{" "}
               </span>
             }
