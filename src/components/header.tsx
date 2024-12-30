@@ -15,6 +15,18 @@ const Header = () => {
         <Link href="#projects" className={buttonVariants({ variant: "ghost" })}>
           Projects
         </Link>
+        <Link
+          href="#education"
+          className={buttonVariants({ variant: "ghost" })}
+        >
+          Education
+        </Link>
+        <Link
+          href="/JamesChase2Resume.pdf"
+          className={buttonVariants({ variant: "ghost" })}
+        >
+          Resume
+        </Link>
       </div>
     </nav>
   );

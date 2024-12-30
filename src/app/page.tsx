@@ -6,9 +6,27 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Projects } from "./home/projects";
 import { Education } from "./home/education";
-
+import { useInView } from "react-intersection-observer";
 export default function Home() {
   const { theme } = useTheme();
+
+  const [ref, inView] = useInView({
+    /* Optional options */
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const [ref2, inView2] = useInView({
+    /* Optional options */
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const [ref3, inView3] = useInView({
+    /* Optional options */
+    threshold: 0.3,
+    triggerOnce: true,
+  });
 
   const [mounted, setMounted] = useState(false);
 
@@ -45,13 +63,28 @@ export default function Home() {
           <p className="text-sm">Developer Portfolio / Personal Site</p>
         </div>
       </section>
-      <div className="flex justify-center">
+      <div
+        ref={ref}
+        className={`flex justify-center transition-opacity ease-in duration-700 ${
+          inView ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <About />
       </div>
-      <div className="flex justify-center mt-20">
+      <div
+        ref={ref2}
+        className={`flex justify-center mt-20 transition-opacity ease-in duration-700 ${
+          inView2 ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <Projects />
       </div>
-      <div className="flex justify-center mt-20">
+      <div
+        ref={ref3}
+        className={`flex justify-center mt-20 transition-opacity ease-in duration-700 ${
+          inView3 ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <Education />
       </div>
     </div>

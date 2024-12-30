@@ -18,7 +18,7 @@ import { EducationCard } from "./educationCard";
 const Education = () => {
   return (
     <div id="education" className="w-full max-w-4xl justify-center">
-      <h1>Education</h1>
+      <h2 className="text-lg">Education</h2>
       <Separator className="bg-gray-500" />
       <Tabs defaultValue="University" className="flex mt-4">
         <TabsList className="flex-col h-fit bg-transparent space-y-10 p-2 mr-4 w-28 md:w-32 lg:w-40 lg:min-w-40 border-l-2 border-gray-500 rounded-none">
