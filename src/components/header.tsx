@@ -48,7 +48,7 @@ const Header = () => {
           </Link>
           <Link
             href="/JamesChase2Resume.pdf"
-            className={buttonVariants({ variant: "ghost" })}
+            className={buttonVariants({ variant: "outline" })}
           >
             Resume
           </Link>
@@ -89,6 +89,12 @@ const Header = () => {
                 onClick={(e) => handleAnchorClick(e, "education")}
               >
                 Education
+              </a>
+              <a
+                href="/JamesChase2Resume.pdf"
+                className="px-4 py-3 w-full transition-all hover:bg-gradient-to-r from-slate-50 to-transparent dark:from-slate-800 hover:pl-6 md:hidden"
+              >
+                Resume
               </a>
               <a
                 href="https://notes.jamesdchase.com"
