@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Projects } from "./home/projects";
 import { Education } from "./home/education";
 import { useInView } from "react-intersection-observer";
+import MarginMenu from "@/components/marginMenu";
 export default function Home() {
   const { theme } = useTheme();
 
@@ -63,6 +64,7 @@ export default function Home() {
           <p className="text-sm">Developer Portfolio / Personal Site</p>
         </div>
       </section>
+      <MarginMenu />
       <div
         ref={ref}
         className={`flex justify-center transition-opacity ease-in duration-700 ${
