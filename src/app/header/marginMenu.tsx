@@ -1,13 +1,9 @@
 import { Mail } from "lucide-react";
-import { useTheme } from "next-themes";
 import { Separator } from "@/components/ui/separator";
-import { GithubIconDark } from "../../components/CustomIcons/GithubIconDark";
-import { GithubIconLight } from "../../components/CustomIcons/GithubIconLight";
+import { GithubIcon } from "../../components/CustomIcons/GithubIcon";
 import { LinkedinIcon } from "../../components/CustomIcons/LinkedinIcon";
 
 const MarginMenu = () => {
-  const { theme } = useTheme();
-
   return (
     <>
       <div className="hidden fixed bottom-0 lg:flex z-9999">
@@ -19,7 +15,7 @@ const MarginMenu = () => {
               rel="noreferrer"
               className="hover:opacity-80 transition-opacity"
             >
-              {theme === "light" ? <GithubIconLight /> : <GithubIconDark />}
+              <GithubIcon />
             </a>
           </div>
           <div>

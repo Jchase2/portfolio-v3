@@ -5,10 +5,11 @@ import {
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
-import { LucideGithub, LucideLink } from "lucide-react";
+import { LucideLink } from "lucide-react";
 import { StaticImageData } from "next/image";
 
 import { ImageModal } from "@/components/imageModal";
+import { GithubIcon } from "@/components/CustomIcons/GithubIcon";
 
 type ProjectCardProps = {
   title: string;
@@ -34,7 +35,7 @@ const ProjectCard = ({
         <div className="flex items-center space-x-2">
           {github && (
             <a href={github} target="_blank" rel="noopener noreferrer">
-              <LucideGithub size="16" />
+              <GithubIcon />
             </a>
           )}
           {live && (

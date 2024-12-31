@@ -5,14 +5,10 @@ import { ThemeSwitcher } from "../../components/theme/theme-switcher";
 import { buttonVariants } from "../../components/ui/button";
 import { Mail } from "lucide-react";
 import { LinkedinIcon } from "../../components/CustomIcons/LinkedinIcon";
-import { GithubIconLight } from "../../components/CustomIcons/GithubIconLight";
-import { GithubIconDark } from "../../components/CustomIcons/GithubIconDark";
-import { useTheme } from "next-themes";
+import { GithubIcon } from "../../components/CustomIcons/GithubIcon";
 import { HeaderSheet } from "./headerSheet";
 
 const Header = () => {
-  const { theme } = useTheme();
-
   return (
     <nav className="absolute left-0 right-0 z-20 opacity-100 w-full flex py-2.5 px-5 justify-between">
       <div className="flex align-items gap-x-2">
@@ -24,7 +20,7 @@ const Header = () => {
             rel="noreferrer"
             className="hover:opacity-80 transition-opacity"
           >
-            {theme === "light" ? <GithubIconLight /> : <GithubIconDark />}
+            <GithubIcon />
           </a>
           <a
             href="https://www.linkedin.com/in/jameschase2/"
