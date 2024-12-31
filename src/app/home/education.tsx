@@ -26,31 +26,31 @@ const Education = () => {
             value="University"
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
           >
-            University
+            <p className="ml-2">University</p>
           </TabsTrigger>
           <TabsTrigger
             value="CodeWorks"
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
           >
-            CodeWorks
+            <p className="ml-2">CodeWorks</p>
           </TabsTrigger>
           <TabsTrigger
             value="Coursera"
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
           >
-            Coursera
+            <p className="ml-2">Coursera</p>
           </TabsTrigger>
           <TabsTrigger
             value="uidev"
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
           >
-            UI.DEV
+            <p className="ml-2">UI.DEV</p>
           </TabsTrigger>
           <TabsTrigger
             value="fcc"
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
           >
-            Free Code Camp
+            <p className="ml-2">Free Code Camp</p>
           </TabsTrigger>
         </TabsList>
         <TabsContent
