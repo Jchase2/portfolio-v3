@@ -1,9 +1,9 @@
 import { Mail } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Separator } from "@/components/ui/separator";
-import { GithubIconDark } from "./CustomIcons/GithubIconDark";
-import { GithubIconLight } from "./CustomIcons/GithubIconLight";
-import { LinkedinIcon } from "./CustomIcons/LinkedinIcon";
+import { GithubIconDark } from "../../components/CustomIcons/GithubIconDark";
+import { GithubIconLight } from "../../components/CustomIcons/GithubIconLight";
+import { LinkedinIcon } from "../../components/CustomIcons/LinkedinIcon";
 
 const MarginMenu = () => {
   const { theme } = useTheme();

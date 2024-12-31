@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Projects } from "./home/projects";
 import { Education } from "./home/education";
 import { useInView } from "react-intersection-observer";
-import MarginMenu from "@/components/marginMenu";
+import MarginMenu from "@/app/header/marginMenu";
 export default function Home() {
   const { theme } = useTheme();
 
@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div>
       <section className="h-[calc(100vh-74px)] flex items-center justify-center">
-        <div className="absolute inset-0" suppressHydrationWarning>
+        <div className="absolute inset-0">
           {theme === "dark" ? (
             <Image
               src="/background.jpg"
