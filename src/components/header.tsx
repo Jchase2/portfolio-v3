@@ -4,11 +4,16 @@ import Link from "next/link";
 import { ThemeSwitcher } from "./theme/theme-switcher";
 import { Button, buttonVariants } from "./ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
-import { ExternalLink, Menu } from "lucide-react";
+import { ExternalLink, Mail, Menu } from "lucide-react";
 import { useState } from "react";
+import { LinkedinIcon } from "./CustomIcons/LinkedinIcon";
+import { GithubIconLight } from "./CustomIcons/GithubIconLight";
+import { GithubIconDark } from "./CustomIcons/GithubIconDark";
+import { useTheme } from "next-themes";
 
 const Header = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const { theme } = useTheme();
 
   const handleAnchorClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -28,6 +33,30 @@ const Header = () => {
     <nav className="absolute left-0 right-0 z-20 opacity-100 w-full flex py-2.5 px-5 justify-between">
       <div className="flex align-items gap-x-2">
         <ThemeSwitcher />
+        <div className="flex flex-row items-center gap-x-5 ml-4 lg:hidden">
+          <a
+            href="https://github.com/Jchase2"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:opacity-80 transition-opacity"
+          >
+            {theme === "light" ? <GithubIconLight /> : <GithubIconDark />}
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jameschase2/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:opacity-80 transition-opacity"
+          >
+            <LinkedinIcon />
+          </a>
+          <a
+            href="mailto:mr.jdchase@gmail.com"
+            className="hover:opacity-80 transition-opacity"
+          >
+            <Mail size={20} />
+          </a>
+        </div>
       </div>
       <div className="flex align-items gap-x-2">
         <div className="hidden md:block">
@@ -48,7 +77,7 @@ const Header = () => {
           </Link>
           <Link
             href="/JamesChase2Resume.pdf"
-            className={buttonVariants({ variant: "outline" })}
+            className={buttonVariants({ variant: "ghost" })}
           >
             Resume
           </Link>
