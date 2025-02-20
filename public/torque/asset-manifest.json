@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/torque/static/css/main.36497136.chunk.css",
+    "main.js": "/torque/static/js/main.5722390d.chunk.js",
+    "main.js.map": "/torque/static/js/main.5722390d.chunk.js.map",
+    "runtime-main.js": "/torque/static/js/runtime-main.ab706ea9.js",
+    "runtime-main.js.map": "/torque/static/js/runtime-main.ab706ea9.js.map",
+    "static/css/2.a7dba52d.chunk.css": "/torque/static/css/2.a7dba52d.chunk.css",
+    "static/js/2.ae6d618f.chunk.js": "/torque/static/js/2.ae6d618f.chunk.js",
+    "static/js/2.ae6d618f.chunk.js.map": "/torque/static/js/2.ae6d618f.chunk.js.map",
+    "index.html": "/torque/index.html",
+    "precache-manifest.df36790f8396ad4f449ba26079af3475.js": "/torque/precache-manifest.df36790f8396ad4f449ba26079af3475.js",
+    "service-worker.js": "/torque/service-worker.js",
+    "static/css/2.a7dba52d.chunk.css.map": "/torque/static/css/2.a7dba52d.chunk.css.map",
+    "static/css/main.36497136.chunk.css.map": "/torque/static/css/main.36497136.chunk.css.map",
+    "static/js/2.ae6d618f.chunk.js.LICENSE.txt": "/torque/static/js/2.ae6d618f.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/torque/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab706ea9.js",
+    "static/css/2.a7dba52d.chunk.css",
+    "static/js/2.ae6d618f.chunk.js",
+    "static/css/main.36497136.chunk.css",
+    "static/js/main.5722390d.chunk.js"
+  ]
+}

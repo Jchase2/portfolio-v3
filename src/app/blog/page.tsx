@@ -1,30 +1,27 @@
 import { getSortedPostsData } from "./blog";
-import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import { format, parseISO } from "date-fns";
 
 const Blog = () => {
   const allPostsData = getSortedPostsData();
 
   return (
-    <section>
-      <header className="flex items-center justify-center">
-        <h1>Yet another blog.</h1>
-        <p>
-          This is my blog, mainly focused on technical stuff, but potentially
-          other topics as well.
-        </p>
+    <section className="flex flex-col items-center">
+      <header>
+        <h1 className="text-2xl mb-4">James Chase&apos;s Tech Blog</h1>
       </header>
-      <h2 className="flex items-center justify-center">Posts</h2>
-      <Separator className="bg-gray-500" />
-      <section className="flex items-center justify-center">
+      <section>
         <ul>
           {allPostsData.map(({ postSlug, date, title }) => (
-            <li key={postSlug}>
-              <h3>
-                <Link href={`/blog/${postSlug}`}>
-                  {title}, {date}
+            <li key={postSlug} className="mb-4">
+              <div>
+                <Link href={`/blog/${postSlug}`} legacyBehavior>
+                  <a className="text-xl text-blue-600 dark:text-blue-400 hover:underline">
+                    {title}
+                  </a>
                 </Link>
-              </h3>
+                <p>{format(new Date(parseISO(date)), "MMMM do, yyyy")}</p>
+              </div>
             </li>
           ))}
         </ul>

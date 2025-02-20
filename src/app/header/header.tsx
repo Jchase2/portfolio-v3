@@ -7,8 +7,14 @@ import { Mail } from "lucide-react";
 import { LinkedinIcon } from "../../components/CustomIcons/LinkedinIcon";
 import { GithubIcon } from "../../components/CustomIcons/GithubIcon";
 import { HeaderSheet } from "./headerSheet";
+import HomeLinks from "./homeLinks";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const isBlogPage = pathname.startsWith("/blog/");
+
   return (
     <nav className="absolute left-0 right-0 z-20 opacity-100 w-full flex py-2.5 px-5 justify-between">
       <div className="flex align-items gap-x-2">
@@ -39,22 +45,21 @@ const Header = () => {
         </div>
       </div>
       <div className="flex align-items gap-x-2">
+        {isBlogPage ? (
+          <Link href="/blog" className={buttonVariants({ variant: "ghost" })}>
+            Back
+          </Link>
+        ) : (
+          ""
+        )}
+        {!isHomePage && (
+          <Link href="/" className={buttonVariants({ variant: "ghost" })}>
+            {" "}
+            Home{" "}
+          </Link>
+        )}
         <div className="hidden md:block">
-          <Link href="#about" className={buttonVariants({ variant: "ghost" })}>
-            About
-          </Link>
-          <Link
-            href="#projects"
-            className={buttonVariants({ variant: "ghost" })}
-          >
-            Projects
-          </Link>
-          <Link
-            href="#education"
-            className={buttonVariants({ variant: "ghost" })}
-          >
-            Education
-          </Link>
+          {isHomePage && <HomeLinks />}
           <Link
             href="/JamesChase2Resume.pdf"
             className={buttonVariants({ variant: "ghost" })}

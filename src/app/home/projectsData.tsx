@@ -28,7 +28,7 @@ const ProjectData: IProjectCard[] = [
       </React.Fragment>
     ),
     github: "https://github.com/Jchase2/hn-clone",
-    live: "https://5df39389dbcc44707f766644--admiring-shirley-f2e656.netlify.com/",
+    live: "https://jamesdchase.com/hn-clone",
   },
   {
     title: "Torque Calculator",

@@ -7,23 +7,14 @@ import {
 } from "@/components/ui/sheet";
 import { ExternalLink, Menu } from "lucide-react";
 import { useState } from "react";
+import { HomeSheet } from "./homeLinks";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const HeaderSheet = () => {
   const [open, setOpen] = useState<boolean>(false);
-
-  const handleAnchorClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    anchorId: string
-  ) => {
-    event.preventDefault();
-    setOpen(false);
-    setTimeout(() => {
-      const targetElement = document.getElementById(anchorId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 300);
-  };
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   return (
     <Sheet open={open} onOpenChange={(newOpen: boolean) => setOpen(newOpen)}>
@@ -36,30 +27,16 @@ const HeaderSheet = () => {
       <SheetTitle className="sr-only">Link Menu</SheetTitle>
       <SheetContent side="right">
         <nav className="flex flex-col space-y-4">
-          <a
-            href="#about"
-            className="px-4 py-3 w-full transition-all hover:bg-gradient-to-r from-slate-50 to-transparent dark:from-slate-800 hover:pl-6 md:hidden"
-            data-anchor="about"
-            onClick={(e) => handleAnchorClick(e, "about")}
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            className="px-4 py-3 w-full transition-all hover:bg-gradient-to-r from-slate-50 to-transparent dark:from-slate-800 hover:pl-6 md:hidden"
-            data-anchor="about"
-            onClick={(e) => handleAnchorClick(e, "projects")}
-          >
-            Projects
-          </a>
-          <a
-            href="#education"
-            className="px-4 py-3 w-full transition-all hover:bg-gradient-to-r from-slate-50 to-transparent dark:from-slate-800 hover:pl-6 md:hidden"
-            data-anchor="about"
-            onClick={(e) => handleAnchorClick(e, "education")}
-          >
-            Education
-          </a>
+          {isHomePage ? (
+            <HomeSheet setOpen={setOpen} />
+          ) : (
+            <Link
+              href="/"
+              className="px-4 py-3 w-full transition-all hover:bg-gradient-to-r from-slate-50 to-transparent dark:from-slate-800 hover:pl-6 md:hidden"
+            >
+              Home
+            </Link>
+          )}
           <a
             href="/JamesChase2Resume.pdf"
             className="px-4 py-3 w-full transition-all hover:bg-gradient-to-r from-slate-50 to-transparent dark:from-slate-800 hover:pl-6 md:hidden"
@@ -86,7 +63,7 @@ const HeaderSheet = () => {
               </div>
             }
           </a>
-          <a
+          {/* <a
             href="https://plex.jamesdchase.com"
             className="px-4 py-3 w-full transition-all hover:bg-gradient-to-r from-slate-50 to-transparent dark:from-slate-800 hover:pl-6"
           >
@@ -95,7 +72,7 @@ const HeaderSheet = () => {
                 <ExternalLink size={14} /> Plex
               </div>
             }
-          </a>
+          </a> */}
         </nav>
       </SheetContent>
     </Sheet>

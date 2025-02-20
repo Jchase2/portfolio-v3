@@ -2,7 +2,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
-
+import { remark } from "remark";
+import html from "remark-html";
+import { format, parseISO } from "date-fns";
 async function getPostData(postSlug: string) {
   const filePath = path.join(
     process.cwd(),
@@ -16,30 +18,48 @@ async function getPostData(postSlug: string) {
 
   const fileContents = fs.readFileSync(filePath, "utf8");
   const matterResult = matter(fileContents);
+  // Use remark to convert markdown into HTML string
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+  const contentHtml = processedContent.toString();
 
   return {
     postSlug,
-    content: matterResult.content,
-    data: matterResult.data, // This should contain title, date, etc.
+    content: contentHtml, // Html constructed from markdown
+    data: matterResult.data, // Metadata in md file
   };
 }
 
 export default async function BlogPost({
   params,
 }: {
-  params: { postslug: string };
+  params: Promise<{ postslug: string }>;
 }) {
-  const postData = await getPostData(params.postslug);
+  const parameters = await params;
+  const postData = await getPostData(parameters.postslug);
 
   if (!postData) {
     return notFound();
   }
 
   return (
-    <div>
-      <h1>{postData.data.title}</h1>
-      <p>{postData.data.date}</p>
-      <article dangerouslySetInnerHTML={{ __html: postData.content }} />
+    <div className="flex flex-col items-center">
+      <h1 className="text-3xl">{postData.data.title}</h1>
+      <p className="text-sm">
+        {format(new Date(parseISO(postData.data.date)), "MMMM do, yyyy")}
+      </p>
+
+      <div className="mt-4">
+        {postData.content ? (
+          <div
+            className="prose prose-slate dark:prose-invert"
+            dangerouslySetInnerHTML={{ __html: postData.content }}
+          />
+        ) : (
+          <p>No content available for this post.</p> // Handle missing content
+        )}
+      </div>
     </div>
   );
 }
