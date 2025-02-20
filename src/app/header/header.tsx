@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
-  const isBlogPage = pathname.startsWith("/blog/");
+  const isBlogPage = pathname.startsWith("/blog/") && pathname !== "/blog/";
 
   return (
     <nav className="absolute left-0 right-0 z-20 opacity-100 w-full flex py-2.5 px-5 justify-between">
