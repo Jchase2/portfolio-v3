@@ -57,5 +57,20 @@ page.tsx within the postslug directory handles displaying the post itself, which
 </div>
 ```
 
+### Publishing this Site.
+
+In order to publish the site, I've got a Hetzner cloud server running debian with these specs:
+
+![Hetzner cloud server](/blogpics/cpx21-hetzner.png)
+
+Currently, I just push to github, pull the new updates in with git pull, npm run build and restart the server similar to this:
+
+```
+npm run build && pm2 stop jamesdchase.com && pm2 start "npm run start" --name "jamesdchase.com"
+```
+
+This works, but I'm going to work on a full build pipeline soon so I can just push to github and it'll automatically build and deploy changes.
+
 I'm pretty happy with how it has turned out so far, although I'm sure I'll get the itch to expand the features or alter the styling in the future.
 If you’re working on something similar or have insights to share, feel free to connect on [Linkedin!](https://www.linkedin.com/in/jameschase2/)
+That's all I've got for now! I'll be posting new blog posts to my LinkedIn as they come.
