@@ -12,15 +12,16 @@ import HKUST_GO from "../../../public/go.png";
 import UIDEV from "../../../public/uidev.png";
 import fcc1 from "../../../public/fcc1.jpg";
 import fcc2 from "../../../public/fcc2.png";
+import awsccp from "../../../public/awsccp.png";
 
 import { EducationCard } from "./educationCard";
 
 const Education = () => {
   return (
     <div id="education" className="w-full max-w-4xl justify-center">
-      <h2 className="text-lg">Education</h2>
+      <h2 className="text-lg">Education & Certificates</h2>
       <Separator className="bg-gray-500" />
-      <Tabs defaultValue="University" className="flex mt-4">
+      <Tabs defaultValue="University" className="flex mt-4 items-start">
         <TabsList className="flex-col h-fit bg-transparent space-y-10 p-2 mr-4 w-28 md:w-32 lg:w-40 lg:min-w-40 border-l-2 border-gray-500 rounded-none">
           <TabsTrigger
             value="University"
@@ -51,6 +52,12 @@ const Education = () => {
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
           >
             <p className="ml-2">Free Code Camp</p>
+          </TabsTrigger>
+          <TabsTrigger
+            value="aws"
+            className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
+          >
+            <p className="ml-2">AWS Certifications</p>
           </TabsTrigger>
         </TabsList>
         <TabsContent
@@ -273,6 +280,29 @@ const Education = () => {
                 Responsive Web Design Certification.
                 <a
                   href="https://www.freecodecamp.org/certification/fcc2c5f7d4d-6435-4973-a266-804a044e6aaf/responsive-web-design"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+        </TabsContent>
+        <TabsContent
+          value="aws"
+          className="flex flex-wrap gap-4 mt-0 max-w-full"
+        >
+          {" "}
+          <EducationCard
+            image={awsccp}
+            imageDesc={"AWS Certified Cloud Practitioner Cert"}
+            cardDesc={
+              <span className="p-2">
+                AWS Certified Cloud Practitioner Cert. Verification Code Is:
+                dd38cf79c28f4f19b42d89a59c2bac15
+                <a
+                  href="https://cp.certmetrics.com/amazon/en/public/verify/credential"
                   className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
                 >
                   {" "}

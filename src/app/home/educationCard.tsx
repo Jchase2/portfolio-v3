@@ -11,7 +11,7 @@ type EducationCardProps = {
 
 const EducationCard = ({ image, imageDesc, cardDesc }: EducationCardProps) => {
   return (
-    <Card className="w-full max-w-[350px] md:min-w-[250px] sm:min-w-[200px]">
+    <Card className="w-full max-w-[350px] md:min-w-[250px] sm:min-w-[200px] h-auto flex-none">
       <CardContent className="mt-4">
         <ImageModal image={image} imageDesc={imageDesc} triggerType="image" />
       </CardContent>
