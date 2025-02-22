@@ -4,25 +4,58 @@ category: "Software Development"
 date: "2024-02-19"
 ---
 
-## Motivation and Learning NextJS
+### Motivations for Blogging
 
-This is my first blog post. My motivation for creating this blog is twofold: first to document my development journey and cement my learning, and second I'm hopeful that this will put my expertise on display in a way that could lead to additional opportunities in the future. The blog will mostly be me describing technical stuff I learn or run into, mixed with some personal rambling with regard to my job search.
+I've always found that writing about what I'm learning helps cement my understanding. Over the years, I've taken notes in various places including Obsidian, GitHub READMEs, and handwritten journals, but I wanted something more structured and public. So, I decided to build my own blog to document my learning journey, share what I’ve been working on, and, hopefully, connect with like-minded developers.
 
-## Some Technical Challenges on the Portfolio Project
+First, I had to decide if I should write my own blogging software, or install something like [Ghost](https://ghost.org/) to manage my posts. Given that I'm a web devloper,
+and my site is already written in NextJS, I figured it made the most sense to just write my own static blog.
 
-I won’t dive too deep into the code here, but if you're curious, you can check out the repository: [github.com/JChase2/portfolio-v3](https://github.com/Jchase2/portfolio-v3)
+Over the past 2 or so years, I've been using [Obsidian](https://obsidian.md/), which is a markdown based note taking app. I like markdown for this sort of thing due to its
+widespread adoption and compatibility with different apps. I decided to adopt it as my preferred markup language for the blog as well. Currently,
+at [https://notes.jamesdchase.com](https://notes.jamesdchase.com), I have a script I found on github which converts the markdown into a published notes section on my site.
 
-Some of the trickier aspects I've run into so far involved how I wanted to structure the blog, if I wanted to go with a static site generator or some pre-built open source blogging platform, and how to get the routing right for some of my old projects in the public directory. I use Obsidian, which is a markdown based note taking app. I've been running a script on this server that generates a site based on the Obsidian markdown files and I've got that published at [notes.jamesdchase.com](https://notes.jamesdchase.com), so I figured it'd be best to implement my own blog with markdown and maybe port the obsidian notes inside of the next app at some point in the future as an alternative to the script.
+In the future, I may move that into my Next app and handle the markdown myself similar to this blog. I also have [Nextcloud](https://nextcloud.com/) set up on my home server,
+where the markdown files for Obsidian are stored. Ideally, in the future, I will have an automated build process set up to build and deploy new blog posts and Obsidian
+notes to the site, stored on my nextcloud instance.
 
-Currently for the blog I'm using remark and remark-html to convert the markdown into html. I'm also using the tailwind prose plugin instead of a dedicated stylesheet for the
-html. That way I don't really have to extend or reimplement the sites style for the blog. I also had to rewrite parts of the header to play well with the blog. At any rate, I'm pretty happy with how it has turned out so far. Won't be surprised if I get the itch to add more features down the line.
+### Writing jamesdchase.com
 
-## Job Hunting
+I've had three different versions of my portfolio site so far. You can find all three versions on my github: [https://github.com/Jchase2](https://github.com/Jchase2).
+The [first version](https://github.com/Jchase2/portfolio) was simply built with html, css, and some Javascript with bootstrap. The [second version](https://github.com/Jchase2/portfolio-v2) used create-react app, which has now been [sunsetted / abandoned](https://react.dev/blog/2025/02/14/sunsetting-create-react-app). The create-react-app team now recommends something like NextJS, which is why I'm in the process of converting this site, and at some point, [ServerHuD](https://github.com/Jchase2/serverHuD) (my server / app monitoring software) to Next.
 
-For the past few months, I’ve been working part-time as a tile contractor, but I’m eager to get back into tech. The job market lately has bee challenging for a lot of devs, but I’m sticking it out. I may end up taking a job in an adjascent field if need be, but I'm going to continue to code on my own for the love of the game anyway.
+In order to learn NextJS, I purchased Robin Wieruch's [Road to Next course](https://www.road-to-next.com/). I like to implement things on my own to cement my learning from courses,
+so I've been slowly working through that course while building out my portfolio with the concepts I'm picking up from there. I've been learning a lot!
 
-While I’m primarily looking for development roles, I’m also considering IT positions since I have strong Linux and general IT experience, though most of it has been in freelance and support roles rather than a corporate setting. I did work in Linux IT support for a hosting provider for some time, which gave me hands-on troubleshooting experience.
+### Writing the Blog
 
-I’m also exploring structured career programs like mthree, which could be a good stepping stone. Relocation might be required, but it could be worthwhile. Additionally, with my recent AWS Certified Cloud Practitioner certification, I’m considering expanding my cloud expertise, as there may be opportunities in that space that align with my skills.
+Currently, the blog is pretty bare bones. I have a blog directory in my NextJS app directory, which contains a directory for markdown files, a blog.tsx, a page.tsx, and a
+postslug directory which uses Next's [Dynamic Routes.](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
 
-Regardless of where I end up, I’m staying positive and open to new possibilities.
+blog.tsx handles grabbing the markdown files and sorting them by date for page.tsx, which just lists all the blog posts.
+
+```
+  return allPostsData.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+```
+
+page.tsx within the postslug directory handles displaying the post itself, which uses [remark](https://www.npmjs.com/package/remark) and [remark-html](https://www.npmjs.com/package/remark-html) to convert the markdown into html. In order to style the html without using tailwind on every post, I used a tailwind plugin called prose from [tailwind-typography](https://github.com/tailwindlabs/tailwindcss-typography).
+
+```
+<div className="mt-4">
+{postData.content ? (
+    <div
+    className="prose prose-slate dark:prose-invert"
+    dangerouslySetInnerHTML={{ __html: postData.content }}
+    />
+) : (
+    <p>No content available for this post.</p>
+)}
+</div>
+```
+
+I'm pretty happy with how it has turned out so far, although I'm sure I'll get the itch to expand the features or alter the styling in the future.
+If you’re working on something similar or have insights to share, feel free to connect on [Linkedin!](https://www.linkedin.com/in/jameschase2/)
