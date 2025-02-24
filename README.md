@@ -1,7 +1,7 @@
 # Portfolio V3
 
-This will be the third version of my portfolio site, which will eventually be published on jamesdchase.com
+This is the third version of my portfolio site, which is published at [https://jamesdchase.com](https://jamesdchase.com)
 
-Currently my site is using create-react-app and is a pretty minimal page. I'm going to replace the page with a next app that will have my own blog and static site generator for Obsidian notes built in.
+I have two previous versions of the portfolio, one was written with bootstrap, some JS, CSS and html, the second one was built on create-react-app, which is no longer supported.
 
 The goal is to help market myself as a dev and document my tech journey as I learn new things and, hopefully, help others that run into the same problems I have along the way!
