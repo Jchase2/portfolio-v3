@@ -108,6 +108,29 @@ const Education = () => {
           />
         </TabsContent>
         <TabsContent
+          value="aws"
+          className="flex flex-wrap gap-4 mt-0 max-w-full"
+        >
+          {" "}
+          <EducationCard
+            image={awsccp}
+            imageDesc={"AWS Certified Cloud Practitioner Cert"}
+            cardDesc={
+              <span className="p-2 break-all">
+                AWS Certified Cloud Practitioner Cert. Verification Code Is:
+                dd38cf79c28f4f19b42d89a59c2bac15
+                <a
+                  href="https://cp.certmetrics.com/amazon/en/public/verify/credential"
+                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {" "}
+                  Verification Link.
+                </a>{" "}
+              </span>
+            }
+          />
+        </TabsContent>
+        <TabsContent
           value="Coursera"
           className="flex flex-wrap gap-4 mt-0 max-w-full"
         >
@@ -280,29 +303,6 @@ const Education = () => {
                 Responsive Web Design Certification.
                 <a
                   href="https://www.freecodecamp.org/certification/fcc2c5f7d4d-6435-4973-a266-804a044e6aaf/responsive-web-design"
-                  className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  {" "}
-                  Verification Link.
-                </a>{" "}
-              </span>
-            }
-          />
-        </TabsContent>
-        <TabsContent
-          value="aws"
-          className="flex flex-wrap gap-4 mt-0 max-w-full"
-        >
-          {" "}
-          <EducationCard
-            image={awsccp}
-            imageDesc={"AWS Certified Cloud Practitioner Cert"}
-            cardDesc={
-              <span className="p-2 break-all">
-                AWS Certified Cloud Practitioner Cert. Verification Code Is:
-                dd38cf79c28f4f19b42d89a59c2bac15
-                <a
-                  href="https://cp.certmetrics.com/amazon/en/public/verify/credential"
                   className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
                 >
                   {" "}
