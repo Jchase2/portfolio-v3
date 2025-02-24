@@ -67,6 +67,11 @@ const ProjectData: IProjectCard[] = [
     data: "Version 2 of my Portfolio page.",
     github: "https://github.com/Jchase2/portfolio-v2",
   },
+  {
+    title: "vscode-sftp Open Source Contribution",
+    data: "Added filePerm and dirPerm options for configuring permissions on vscode-sftp",
+    github: "https://github.com/Natizyskunk/vscode-sftp/pull/358",
+  },
 ];
 
 export default ProjectData;
