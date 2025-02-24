@@ -36,6 +36,12 @@ const Education = () => {
             <p className="ml-2">CodeWorks</p>
           </TabsTrigger>
           <TabsTrigger
+            value="aws"
+            className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
+          >
+            <p className="ml-2">AWS Certifications</p>
+          </TabsTrigger>
+          <TabsTrigger
             value="Coursera"
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
           >
@@ -52,12 +58,6 @@ const Education = () => {
             className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
           >
             <p className="ml-2">Free Code Camp</p>
-          </TabsTrigger>
-          <TabsTrigger
-            value="aws"
-            className="dark:data-[state=active]:text-blue-400 data-[state=active]:border-l-2 data-[state=active]:border-blue-400 -ml-[20px] w-full justify-center rounded-none text-wrap"
-          >
-            <p className="ml-2">AWS Certifications</p>
           </TabsTrigger>
         </TabsList>
         <TabsContent
