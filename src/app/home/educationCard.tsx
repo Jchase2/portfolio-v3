@@ -15,7 +15,7 @@ const EducationCard = ({ image, imageDesc, cardDesc }: EducationCardProps) => {
       <CardContent className="mt-4">
         <ImageModal image={image} imageDesc={imageDesc} triggerType="image" />
       </CardContent>
-      <CardDescription className="text-center text-card-foreground mb-2">
+      <CardDescription className="text-center text-card-foreground mb-2 break-words">
         {cardDesc}
       </CardDescription>
     </Card>

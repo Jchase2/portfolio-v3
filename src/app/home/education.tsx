@@ -298,7 +298,7 @@ const Education = () => {
             image={awsccp}
             imageDesc={"AWS Certified Cloud Practitioner Cert"}
             cardDesc={
-              <span className="p-2">
+              <span className="p-2 break-all">
                 AWS Certified Cloud Practitioner Cert. Verification Code Is:
                 dd38cf79c28f4f19b42d89a59c2bac15
                 <a
