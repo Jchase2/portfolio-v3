@@ -44,20 +44,20 @@ export default async function BlogPost({
   }
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-3xl">{postData.data.title}</h1>
-      <p className="text-sm">
+    <div className="w-full">
+      <h1 className="text-3xl text-center">{postData.data.title}</h1>
+      <p className="text-sm text-center">
         {format(new Date(parseISO(postData.data.date)), "MMMM do, yyyy")}
       </p>
 
       <div className="mt-4">
         {postData.content ? (
           <div
-            className="prose prose-slate dark:prose-invert"
+            className="prose prose-slate dark:prose-invert mx-auto w-full break-words"
             dangerouslySetInnerHTML={{ __html: postData.content }}
           />
         ) : (
-          <p>No content available for this post.</p> // Handle missing content
+          <p className="text-center">No content available for this post.</p>
         )}
       </div>
     </div>
